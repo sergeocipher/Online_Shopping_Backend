@@ -31,13 +31,4 @@ public class GlobalExceptionHandler {
         );
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
-
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ApiResponse<Object>> handleGenericException(Exception ex) {
-        ApiResponse<Object> response = new ApiResponse<>(
-                false,
-                "An unexpected error occurred: " + ex.getMessage()
-        );
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
-    }
 }
