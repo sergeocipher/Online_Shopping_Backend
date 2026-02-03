@@ -1,108 +1,96 @@
 🛒 Online Shopping Backend
 
-A Spring Boot–based backend application for an online shopping system, implementing secure authentication, product management, order processing, and admin analytics using REST APIs.
+Spring Boot backend for an online shopping system with secure authentication, product and order management, and admin analytics exposed via REST APIs.
 
-🚀 Tech Stack
+## Tech Stack
+- Java 17
+- Spring Boot
+- Spring Security + JWT
+- Spring Data JPA
+- H2 in-memory database
+- Swagger / OpenAPI
+- Maven (wrapper included)
 
-Java 17
+## Features
+**Authentication & Security**
+- User registration and login
+- JWT-based authentication
+- Role-based access control (ADMIN/USER)
+- Secured APIs using Spring Security
 
-Spring Boot
+**Product Management**
+- Admin can add and delete products
+- Users can view the product list
+- Pagination supported
 
-Spring Security + JWT
+**Order Management**
+- Logged-in users can place orders
+- Users can view their order history
+- Orders are linked to users
 
-Spring Data JPA
+**Admin Analytics**
+- View total number of orders
+- View total revenue
+- Restricted to ADMIN role
 
-H2 In-Memory Database
+**API Documentation**
+- Integrated Swagger UI
+- JWT authorization supported in Swagger UI
 
-Swagger / OpenAPI
+## Project Structure
+```
+controller/   REST APIs
+service/      Business logic
+repository/   Database access
+model/        Entities
+dto/          Request/Response objects
+config/       Security & Swagger config
+exception/    Global exception handling
+util/         JWT utilities
+```
 
-Maven
+## Getting Started
+**Prerequisites**
+- Java 17
+- Git
 
-📌 Features Implemented
-🔐 Authentication & Security
-
-User registration and login
-
-JWT-based authentication
-
-Role-based access control (ADMIN / USER)
-
-Secured APIs using Spring Security
-
-🛍 Product Management
-
-Admin can add and delete products
-
-Users can view product list
-
-Pagination supported
-
-📦 Order Management
-
-Logged-in users can place orders
-
-Users can view their order history
-
-Orders linked to users
-
-📊 Admin Analytics
-
-View total number of orders
-
-View total revenue
-
-Accessible only by ADMIN
-
-📄 API Documentation
-
-Integrated Swagger
-
-All APIs testable via browser
-
-JWT authorization supported in Swagger UI
-
-🗂 Project Structure
-controller/   → REST APIs
-service/      → Business logic
-repository/   → Database access
-model/        → Entities
-dto/          → Request/Response objects
-config/       → Security & Swagger config
-exception/    → Global exception handling
-util/         → JWT utilities
-
-▶️ How to Run the Project
+**Clone and Run**
+```bash
+git clone https://github.com/Avishkar74/Online_Shopping_Backend.git
+cd Online_Shopping_Backend
 ./mvnw clean spring-boot:run
+# On Windows PowerShell you can also run:
+# .\mvnw.cmd clean spring-boot:run
+```
 
+Application runs at: http://localhost:8080
 
-Application runs on:
+## API Documentation
+- Swagger UI: http://localhost:8080/swagger-ui.html
 
-http://localhost:8080
+## H2 Database Console
+- Console: http://localhost:8080/h2-console
+- JDBC URL: `jdbc:h2:mem:testdb`
+- Username: `sa`
+- Password: *(empty)*
 
-🔍 Swagger API Documentation
+## Quick Testing Flow
+1) Register a user
+2) Login to get a JWT token
+3) Authorize in Swagger UI (Authorize button) 🔒
+4) Create or view products
+5) Place orders
+6) View analytics (ADMIN only)
 
-Access Swagger UI:
+## Build & Test
+```bash
+./mvnw test
+```
 
-http://localhost:8080/swagger-ui.html
+## Contributing
+- Create a branch for your change (e.g., `add-readme`)
+- Run the app/tests locally
+- Open a Pull Request with a short summary of changes
 
-🗄 H2 Database Console
-http://localhost:8080/h2-console
-
-
-JDBC URL: jdbc:h2:mem:testdb
-Username: sa
-Password: (empty)
-
-🧪 Testing Flow (Quick)
-
-Register user
-
-Login to get JWT token
-
-Authorize using Swagger 🔒
-
-Create/View products
-
-Place orders
-
-View analytics (ADMIN only)
+## License
+Specify the project license here (e.g., MIT) or add a `LICENSE` file.
