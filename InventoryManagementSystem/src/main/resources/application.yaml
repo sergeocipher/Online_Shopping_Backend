@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: InventoryManagementSystem
+  profiles:
+    active: prod
+
+security:
+  jwt:
+    secret: change-me-please-with-a-strong-secret-that-is-at-least-32-chars
+    expiration-ms: 86400000
